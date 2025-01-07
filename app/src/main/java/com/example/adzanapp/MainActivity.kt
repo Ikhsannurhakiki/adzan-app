@@ -10,8 +10,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -27,39 +25,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.adzanapp.data.model.Request
+import com.example.adzanapp.data.model.Responses
 import com.example.adzanapp.ui.theme.AdzanAppTheme
 
 data class PrayTime(
     val status: Boolean,
     val request: Request,
-    val data: Data
+    val data: Responses
 )
-
-data class Request(
-    val path: String
-)
-
-data class Data(
-    val id: Int,
-    val lokasi: String,
-    val daerah: String,
-    val jadwal: Jadwal
-)
-
-data class Jadwal(
-    val tanggal: String,
-    val imsak: String,
-    val subuh: String,
-    val terbit: String,
-    val dhuha: String,
-    val dzuhur: String,
-    val ashar: String,
-    val maghrib: String,
-    val isya: String,
-    val date: String
-)
-
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
